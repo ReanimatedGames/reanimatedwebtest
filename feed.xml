@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="http://localhost:8080/">
+  <title>My Web Development Blog</title>
+  <subtitle>Tell the word what you are writing about in your blog. It will show up on feed readers.</subtitle>
+  <link href="http://localhost:8080/feed.xml" rel="self" />
+  <link href="http://localhost:8080/" />
+  <updated>2025-12-14T22:43:49Z</updated>
+  <id>http://localhost:8080/</id>
+  <author>
+    <name>Lene Saile</name>
+  </author>
+	<entry>
+      <title>Deadburg is now available on Steam!</title>
+      <link href="http://localhost:8080/blog/deadburg-is-now-available-on-steam/" />
+      <updated>2022-03-16T00:00:00Z</updated>
+      <id>http://localhost:8080/blog/deadburg-is-now-available-on-steam/</id>
+      <content type="html">
+				&lt;p&gt;The wait is over! Deadburg is now available to play on PC via Steam.&lt;/p&gt;
+&lt;iframe loading=&quot;lazy&quot; src=&quot;https://store.steampowered.com/widget/671640/&quot; width=&quot;646&quot; height=&quot;190&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+ 			</content>
+    </entry><entry>
+      <title>Local co-op on the same console is NOT supported!</title>
+      <link href="http://localhost:8080/blog/local-co-op-on-the-same-console-is-not-supported/" />
+      <updated>2014-12-26T15:04:14Z</updated>
+      <id>http://localhost:8080/blog/local-co-op-on-the-same-console-is-not-supported/</id>
+      <content type="html">
+				&lt;p&gt;Due to a mistake made when posting the build to the Xbox Live Indie Game marketplace Deadburg currently shows support for offline co-op. This is NOT a supported feature.&lt;/p&gt;
+&lt;p&gt;We will be updating the game as soon as possible to fix this error in the description. That will probably go live around 1/6, based on how long it took to get initial approval.&lt;/p&gt;
+
+ 			</content>
+    </entry><entry>
+      <title>Deadburg is available!</title>
+      <link href="http://localhost:8080/blog/deadburg-is-available/" />
+      <updated>2014-12-24T00:00:00Z</updated>
+      <id>http://localhost:8080/blog/deadburg-is-available/</id>
+      <content type="html">
+				&lt;p&gt;Deadburg, the first release from Reanimated Games is now live on the Xbox LIVE Indie Game store!&lt;/p&gt;
+&lt;p&gt;Check it out &lt;a href=&quot;http://marketplace.xbox.com/en-US/Product/Deadburg/66acd000-77fe-1000-9115-d80258550eb4&quot; rel=&quot;noopener&quot;&gt;here&lt;/a&gt;, or find it in the Indie Game channel on your Xbox 360.&lt;/p&gt;
+
+ 			</content>
+    </entry><entry>
+      <title>Contracting Visual/Audio Assets</title>
+      <link href="http://localhost:8080/blog/contracting-visual/audio-assets/" />
+      <updated>2012-08-28T09:17:34Z</updated>
+      <id>http://localhost:8080/blog/contracting-visual/audio-assets/</id>
+      <content type="html">
+				&lt;p&gt;I’m beginning to start the seach for artists to put together concept art to replace the current programmer art in our game. Full 3d assets and audio will be on the docket soon. Contact me if you’re interested. More details on what we’re looking for will then be made available. These will be &lt;strong&gt;paid&lt;/strong&gt; contracts.&lt;/p&gt;
+
+ 			</content>
+    </entry></feed>
