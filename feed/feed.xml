@@ -3,46 +3,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title>Blog Title</title>
   <subtitle>This is a longer description about your blog.</subtitle>
-  <link href="https://example.com/feed/feed.xml" rel="self" />
-  <link href="https://example.com/" />
+  <link href="https://example.com/reanimatedwebtest/feed/feed.xml" rel="self" />
+  <link href="https://example.com/reanimatedwebtest/" />
   <updated>2023-01-23T00:00:00Z</updated>
-  <id>https://example.com/</id>
+  <id>https://example.com/reanimatedwebtest/</id>
   <author>
     <name>Your Name</name>
   </author>
   <entry>
     <title>This is a fifth post (draft)</title>
-    <link href="https://example.com/blog/fifthpost/" />
+    <link href="https://example.com/reanimatedwebtest/blog/fifthpost/" />
     <updated>2023-01-23T00:00:00Z</updated>
-    <id>https://example.com/blog/fifthpost/</id>
+    <id>https://example.com/reanimatedwebtest/blog/fifthpost/</id>
     <content type="html">&lt;p&gt;This is a draft post&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Deadburg is now available on Steam!</title>
-    <link href="https://example.com/blog/deadburg-is-now-available-on-steam/" />
+    <link href="https://example.com/reanimatedwebtest/blog/deadburg-is-now-available-on-steam/" />
     <updated>2022-03-16T01:07:06Z</updated>
-    <id>https://example.com/blog/deadburg-is-now-available-on-steam/</id>
+    <id>https://example.com/reanimatedwebtest/blog/deadburg-is-now-available-on-steam/</id>
     <content type="html">&lt;p&gt;The wait is over! Deadburg is now available to play on PC via Steam.&lt;/p&gt;
 &lt;iframe loading=&quot;lazy&quot; src=&quot;https://store.steampowered.com/widget/671640/&quot; width=&quot;646&quot; height=&quot;190&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</content>
   </entry>
   <entry>
     <title>This is my fourth post</title>
-    <link href="https://example.com/blog/fourthpost/" />
+    <link href="https://example.com/reanimatedwebtest/blog/fourthpost/" />
     <updated>2018-09-30T00:00:00Z</updated>
-    <id>https://example.com/blog/fourthpost/</id>
+    <id>https://example.com/reanimatedwebtest/blog/fourthpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/.11ty/image/?src=content%5Cblog%5Cfourthpost%5Cpossum.png&amp;width=350&amp;format=avif&amp;via=transform 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://example.com/.11ty/image/?src=content%5Cblog%5Cfourthpost%5Cpossum.png&amp;width=350&amp;format=webp&amp;via=transform 350w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/.11ty/image/?src=content%5Cblog%5Cfourthpost%5Cpossum.png&amp;width=350&amp;format=png&amp;via=transform&quot; alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/reanimatedwebtest/.11ty/image/?src=content%5Cblog%5Cfourthpost%5Cpossum.png&amp;width=350&amp;format=avif&amp;via=transform 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://example.com/reanimatedwebtest/.11ty/image/?src=content%5Cblog%5Cfourthpost%5Cpossum.png&amp;width=350&amp;format=webp&amp;via=transform 350w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/reanimatedwebtest/.11ty/image/?src=content%5Cblog%5Cfourthpost%5Cpossum.png&amp;width=350&amp;format=png&amp;via=transform&quot; alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;
 &lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
 &lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>This is my third post.</title>
-    <link href="https://example.com/blog/thirdpost/" />
+    <link href="https://example.com/reanimatedwebtest/blog/thirdpost/" />
     <updated>2018-08-24T00:00:00Z</updated>
-    <id>https://example.com/blog/thirdpost/</id>
+    <id>https://example.com/reanimatedwebtest/blog/thirdpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
 &lt;h3 id=&quot;this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap-this-is-a-very-long-heading-that-i-want-to-wrap&quot;&gt;This is a very long heading that I want to wrap This is a very long heading that I want to wrap This is a very long heading that I want to wrap This is a very long heading that I want to wrap&lt;/h3&gt;
@@ -55,7 +55,7 @@
 
 &lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
 console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;heading-with-a-link&quot;&gt;Heading with a &lt;a href=&quot;https://example.com/blog/thirdpost/#code&quot;&gt;link&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;heading-with-a-link&quot;&gt;Heading with a &lt;a href=&quot;https://example.com/reanimatedwebtest/blog/thirdpost/#code&quot;&gt;link&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;// this is a command
 function myCommand() {
@@ -72,22 +72,22 @@ console.log(&#39;Test&#39;);
   </entry>
   <entry>
     <title>This is my second post with a much longer title.</title>
-    <link href="https://example.com/blog/secondpost/" />
+    <link href="https://example.com/reanimatedwebtest/blog/secondpost/" />
     <updated>2018-07-04T00:00:00Z</updated>
-    <id>https://example.com/blog/secondpost/</id>
+    <id>https://example.com/reanimatedwebtest/blog/secondpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://example.com/blog/firstpost/&quot;&gt;First post&lt;/a&gt;
-&lt;a href=&quot;https://example.com/blog/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://example.com/reanimatedwebtest/blog/firstpost/&quot;&gt;First post&lt;/a&gt;
+&lt;a href=&quot;https://example.com/reanimatedwebtest/blog/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
 &lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>This is my first post.</title>
-    <link href="https://example.com/blog/firstpost/" />
+    <link href="https://example.com/reanimatedwebtest/blog/firstpost/" />
     <updated>2018-05-01T00:00:00Z</updated>
-    <id>https://example.com/blog/firstpost/</id>
+    <id>https://example.com/reanimatedwebtest/blog/firstpost/</id>
     <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
 &lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
 &lt;h2 id=&quot;section-header&quot;&gt;Section Header&lt;/h2&gt;
@@ -106,27 +106,27 @@ console.log(&#39;Test&#39;);
   </entry>
   <entry>
     <title>Local co-op on the same console is NOT supported!</title>
-    <link href="https://example.com/blog/local-co-op-on-the-same-console-is-not-supported/" />
+    <link href="https://example.com/reanimatedwebtest/blog/local-co-op-on-the-same-console-is-not-supported/" />
     <updated>2014-12-26T15:04:14Z</updated>
-    <id>https://example.com/blog/local-co-op-on-the-same-console-is-not-supported/</id>
+    <id>https://example.com/reanimatedwebtest/blog/local-co-op-on-the-same-console-is-not-supported/</id>
     <content type="html">&lt;p&gt;Due to a mistake made when posting the build to the Xbox Live Indie Game marketplace Deadburg currently shows support for offline co-op. This is NOT a supported feature.&lt;/p&gt;
 &lt;p&gt;We will be updating the game as soon as possible to fix this error in the description. That will probably go live around 1/6, based on how long it took to get initial approval.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Deadburg is available!</title>
-    <link href="https://example.com/blog/deadburg-is-available/" />
+    <link href="https://example.com/reanimatedwebtest/blog/deadburg-is-available/" />
     <updated>2014-12-24T04:52:50Z</updated>
-    <id>https://example.com/blog/deadburg-is-available/</id>
+    <id>https://example.com/reanimatedwebtest/blog/deadburg-is-available/</id>
     <content type="html">&lt;p&gt;Deadburg, the first release from Reanimated Games is now live on the Xbox LIVE Indie Game store!&lt;/p&gt;
 &lt;p&gt;Check it out &lt;a href=&quot;http://marketplace.xbox.com/en-US/Product/Deadburg/66acd000-77fe-1000-9115-d80258550eb4&quot;&gt;here&lt;/a&gt;, or find it in the Indie Game channel on your Xbox 360.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Contracting Visual/Audio Assets</title>
-    <link href="https://example.com/blog/contracting-visualaudio-assets/" />
+    <link href="https://example.com/reanimatedwebtest/blog/contracting-visualaudio-assets/" />
     <updated>2012-08-28T09:17:34Z</updated>
-    <id>https://example.com/blog/contracting-visualaudio-assets/</id>
+    <id>https://example.com/reanimatedwebtest/blog/contracting-visualaudio-assets/</id>
     <content type="html">&lt;p&gt;I’m beginning to start the seach for artists to put together concept art to replace the current programmer art in our game. Full 3d assets and audio will be on the docket soon. Contact me if you’re interested. More details on what we’re looking for will then be made available. These will be &lt;strong&gt;paid&lt;/strong&gt; contracts.&lt;/p&gt;
 </content>
   </entry>
