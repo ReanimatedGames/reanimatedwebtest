@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>This is my second post with a much longer title.</title>
 		<meta name="description" content="This is a post on My Blog about leveraging agile frameworks.">
-		<link rel="alternate" href="/reanimatedwebtest/feed/feed.xml" type="application/atom+xml" title="Eleventy Base Blog v9">
+		<link rel="alternate" href="/reanimatedwebtest/feed/feed.xml" type="application/atom+xml" title="REANIMATED GAMES">
 		
 		
 		
@@ -43,7 +43,8 @@
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
+		--background-color: #fe8210;
+		--foreground-color: #15202b;
 	}
 }
 
@@ -59,7 +60,7 @@
 
 html,
 body {
-	padding: 0;
+	padding: 30px;
 	margin: 0 auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
@@ -70,6 +71,12 @@ html {
 }
 body {
 	max-width: 40em;
+}
+
+.fugaz-one-regular {
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -117,6 +124,7 @@ li {
 
 a[href] {
 	color: var(--text-color-link);
+	/*font-family: "Fugaz One";*/
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
@@ -129,6 +137,7 @@ a[href]:active {
 main,
 footer {
 	padding: 1rem;
+	background-color: var(--foreground-color);
 }
 main :first-child {
 	margin-top: 0;
@@ -136,6 +145,7 @@ main :first-child {
 
 header {
 	border-bottom: 1px dashed var(--color-gray-20);
+	background-color: var(--foreground-color);
 }
 
 #skip-link {
@@ -216,6 +226,7 @@ header {
 	flex-grow: 1;
 	font-size: 1em; /* 16px /16 */
 	font-weight: 700;
+	font-family: "Fugaz One";
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
@@ -228,9 +239,11 @@ header {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	background-color: var(--foreground-color);
 }
 .nav-item {
 	display: inline-block;
+	font-family: "Fugaz One";
 }
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
@@ -476,12 +489,19 @@ pre[class*="language-diff-"] {
 	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/reanimatedwebtest/" class="home-link">Eleventy Base Blog v9</a>
+			<h1 id="reanimated-games"><a href="/reanimatedwebtest/" class="home-link">REANIMATED GAMES</a></h1>
+
+		</header>
 			<nav>
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
 				<ul class="nav">
@@ -491,7 +511,6 @@ pre[class*="language-diff-"] {
 					<li class="nav-item"><a href="/reanimatedwebtest/feed/feed.xml">Feed</a></li>
 				</ul>
 			</nav>
-		</header>
 
 		<main id="main">
 			<heading-anchors>
@@ -524,7 +543,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 
-		<!-- This page `/blog/secondpost/` was built on 2025-12-15T01:07:51.408Z -->
+		<!-- This page `/blog/secondpost/` was built on 2026-01-06T22:52:51.720Z -->
 		<script type="module" src="/reanimatedwebtest/dist/cC8wS6ZjFU.js"></script>
 	</body>
 </html>
