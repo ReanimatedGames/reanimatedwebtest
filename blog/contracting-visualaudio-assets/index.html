@@ -64,11 +64,11 @@
 html,
 body {
 	
-	margin: 2em auto;
+	margin: 0;
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
-	max-width: 1000px;
+	
 }
 html {
 	overflow-y: scroll;
@@ -141,7 +141,14 @@ footer {
 }
 
 footer{
+	margin: 0;
 	clear: both;
+	width: 100%;
+}
+
+.p-footer{
+	margin: 0 auto;
+	width: 20%;
 }
 
 
@@ -242,9 +249,15 @@ header {
 	font-size: 26px;
 }
 
+.page-title{
+	font-size: 26px;
+	font-family: "Fugaz One";
+}
+
 #main_content{
 
 	clear:both;
+	padding: 1.625em 0;
 }
 
 #primary{	
@@ -266,6 +279,20 @@ header {
   	width: 58.4%;
 }
 
+#built-with{
+	background: #f9f9f9;
+  	border-top: 1px solid #ddd;
+  	color: #666;
+  	font-size: 12px;
+  	line-height: 2.2em;
+  	padding: 2.2em 0.5em;
+  	text-align: center;
+}
+
+#page{
+	max-width: 1000px;
+	margin: 2em auto;
+}
 
 nav{
 	
@@ -284,6 +311,7 @@ nav{
 	padding: 0;
 	list-style: none;
 	margin: 0 7.6%;
+	font-size: 13px;
 	color: var(--foreground-color);
 	background-color: var(--color-black);
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
@@ -329,6 +357,7 @@ nav{
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
 }
+
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
@@ -382,6 +411,18 @@ nav{
 }
 .post-metadata time {
 	margin-right: 1em;
+}
+
+
+#reanimated-games{
+	margin: 1% 7.6%;
+}
+
+.small-post{
+	margin: 0 0 1.625em;
+	padding: 0 0 1.625em;
+
+	border-bottom: 1px solid #ddd;
 }
 /**
  * okaidia theme for JavaScript, CSS and HTML
@@ -559,27 +600,27 @@ pre[class*="language-diff-"] {
 
 	</head>
 	<body>
-		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+		<div id="page">
+			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<h1 id="reanimated-games"><a href="/reanimatedwebtest/" class="home-link">REANIMATED GAMES</a></h1>
+			<header>
+				<h1 id="reanimated-games"><a href="/reanimatedwebtest/" class="home-link">REANIMATED GAMES</a></h1>
 
-		</header>
-			<nav>
-				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
-				<ul class="nav">
-					<li class="nav-item"><a href="/reanimatedwebtest/">Home</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/contact/">Contact</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/indevelopment/">In Development</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/privacy/">Privacy</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/feed/feed.xml">Feed</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/roku/">Roku</a></li>
-				</ul>
-			</nav>
+			</header>
+				<nav>
+					<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/reanimatedwebtest/">Home</a></li>
+						<li class="nav-item"><a href="/reanimatedwebtest/contact/">Contact</a></li>
+						<li class="nav-item"><a href="/reanimatedwebtest/indevelopment/">In Development</a></li>
+						<li class="nav-item"><a href="/reanimatedwebtest/privacy/">Privacy</a></li>
+						<li class="nav-item"><a href="/reanimatedwebtest/roku/">Roku Screensavers</a></li>
+					</ul>
+				</nav>
 
-		<main id="main">
-			<heading-anchors>
-				
+			<main id="main">
+				<heading-anchors>
+					
 
 
 <h1 id="contracting-visual-audio-assets">Contracting Visual/Audio Assets</h1>
@@ -594,16 +635,19 @@ pre[class*="language-diff-"] {
 <ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/reanimatedwebtest/blog/deadburg-is-available/">Deadburg is available!</a></li>
 </ul>
 
-			</heading-anchors>
-		</main>
+				</heading-anchors>
+			</main>
 
-		<footer>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
-			</p>
-		</footer>
+			<footer>
+				<div id="built-with">
+					<p class="p-footer">
+						<em>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+					</p>
+				</div>
+			</footer>
+		</div>
 
-		<!-- This page `/blog/contracting-visualaudio-assets/` was built on 2026-01-07T01:33:12.190Z -->
+		<!-- This page `/blog/contracting-visualaudio-assets/` was built on 2026-01-07T05:40:20.505Z -->
 		<script type="module" src="/reanimatedwebtest/dist/cC8wS6ZjFU.js"></script>
 	</body>
 </html>
