@@ -22,9 +22,12 @@
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #333;
 
+	--color-black: #000000;
+	--color-white: #fff;
+
 	--background-color: #fff;
 
-	--text-color: var(--color-gray-90);
+	--text-color: var(--color-black);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
 	--text-color-link-visited: #17050F;
@@ -39,12 +42,12 @@
 		--color-gray-90: #dad8d8;
 
 		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
+		--text-color-link: var(--color-black);
 		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
+		--text-color-link-visited: var(--color-black);
 
 		--background-color: #fe8210;
-		--foreground-color: #15202b;
+		--foreground-color: #ffffff;
 	}
 }
 
@@ -60,17 +63,15 @@
 
 html,
 body {
-	padding: 30px;
-	margin: 0 auto;
+	
+	margin: 2em auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
+	max-width: 1000px;
 }
 html {
 	overflow-y: scroll;
-}
-body {
-	max-width: 40em;
 }
 
 .fugaz-one-regular {
@@ -136,9 +137,14 @@ a[href]:active {
 
 main,
 footer {
-	padding: 1rem;
 	background-color: var(--foreground-color);
 }
+
+footer{
+	clear: both;
+}
+
+
 main :first-child {
 	margin-top: 0;
 }
@@ -232,24 +238,81 @@ header {
 	text-decoration: none;
 }
 
+.entry-title{
+	font-size: 26px;
+}
+
+#main_content{
+
+	clear:both;
+}
+
+#primary{	
+	float:left;
+	width:100%;
+	margin: 0 -26.4% 0 0;
+	background-color: var(--color-white);
+}
+
+#secondary{
+	float:right;
+	width: 18.8%;
+	margin-right: 7.6%;
+	font-size: 12px;
+}
+
+#content{
+	margin: 0 34% 0 7.6%;
+  	width: 58.4%;
+}
+
+
+nav{
+	
+	line-height: 1.625;
+	width: 100%;
+	background-color: var(--color-black);
+	clear: both;
+	display: block;
+	float: left;
+	margin: 0  auto 6px;
+}
+
 /* Nav */
 .nav {
-	display: flex;
 	gap: .5em 1em;
 	padding: 0;
-	margin: 0;
 	list-style: none;
-	background-color: var(--foreground-color);
+	margin: 0 7.6%;
+	color: var(--foreground-color);
+	background-color: var(--color-black);
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
 }
 .nav-item {
-	display: inline-block;
 	font-family: "Fugaz One";
+	font-size: 150%;
+	line-height: 1.625;
+	float: left;
+	position: relative;
+	box-sizing: content-box;
+}
+
+.nav-item:hover{
+	
+	background-color: var(--color-white);
+	
+	color: var(--color-black);
+
 }
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
+	color: var(--color-white);
 }
-.nav a[href][aria-current="page"] {
-	text-decoration: underline;
+
+.nav-item a{
+	line-height:3.333em;
+	display: block;
+	padding: 0 1.2125em;
 }
 
 /* Posts list */
@@ -506,9 +569,11 @@ pre[class*="language-diff-"] {
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
 				<ul class="nav">
 					<li class="nav-item"><a href="/reanimatedwebtest/">Home</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/blog/">Archive</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/about/">About</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/contact/">Contact</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/indevelopment/">In Development</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/privacy/">Privacy</a></li>
 					<li class="nav-item"><a href="/reanimatedwebtest/feed/feed.xml">Feed</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/roku/">Roku</a></li>
 				</ul>
 			</nav>
 
@@ -538,7 +603,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 
-		<!-- This page `/blog/contracting-visualaudio-assets/` was built on 2026-01-06T22:52:51.720Z -->
+		<!-- This page `/blog/contracting-visualaudio-assets/` was built on 2026-01-07T01:33:12.190Z -->
 		<script type="module" src="/reanimatedwebtest/dist/cC8wS6ZjFU.js"></script>
 	</body>
 </html>

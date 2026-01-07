@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Roku Screensavers</title>
+		<meta name="description" content="List of screensavers created for Roku streaming devices">
+		<link rel="alternate" href="/reanimatedwebtest/feed/feed.xml" type="application/atom+xml" title="REANIMATED GAMES">
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--color-black: #000000;
+	--color-white: #fff;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-black);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--color-black);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--color-black);
+
+		--background-color: #fe8210;
+		--foreground-color: #ffffff;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	
+	margin: 2em auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	max-width: 1000px;
+}
+html {
+	overflow-y: scroll;
+}
+
+.fugaz-one-regular {
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+	/*font-family: "Fugaz One";*/
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main,
+footer {
+	background-color: var(--foreground-color);
+}
+
+footer{
+	clear: both;
+}
+
+
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+	background-color: var(--foreground-color);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+.links-nextprev > * {
+	flex-grow: 1;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	font-family: "Fugaz One";
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+.entry-title{
+	font-size: 26px;
+}
+
+#main_content{
+
+	clear:both;
+}
+
+#primary{	
+	float:left;
+	width:100%;
+	margin: 0 -26.4% 0 0;
+	background-color: var(--color-white);
+}
+
+#secondary{
+	float:right;
+	width: 18.8%;
+	margin-right: 7.6%;
+	font-size: 12px;
+}
+
+#content{
+	margin: 0 34% 0 7.6%;
+  	width: 58.4%;
+}
+
+
+nav{
+	
+	line-height: 1.625;
+	width: 100%;
+	background-color: var(--color-black);
+	clear: both;
+	display: block;
+	float: left;
+	margin: 0  auto 6px;
+}
+
+/* Nav */
+.nav {
+	gap: .5em 1em;
+	padding: 0;
+	list-style: none;
+	margin: 0 7.6%;
+	color: var(--foreground-color);
+	background-color: var(--color-black);
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+}
+.nav-item {
+	font-family: "Fugaz One";
+	font-size: 150%;
+	line-height: 1.625;
+	float: left;
+	position: relative;
+	box-sizing: content-box;
+}
+
+.nav-item:hover{
+	
+	background-color: var(--color-white);
+	
+	color: var(--color-black);
+
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+	color: var(--color-white);
+}
+
+.nav-item a{
+	line-height:3.333em;
+	display: block;
+	padding: 0 1.2125em;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}</style>
+		
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<h1 id="reanimated-games"><a href="/reanimatedwebtest/" class="home-link">REANIMATED GAMES</a></h1>
+
+		</header>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/reanimatedwebtest/">Home</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/contact/">Contact</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/indevelopment/">In Development</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/privacy/">Privacy</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/feed/feed.xml">Feed</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/roku/" aria-current="page">Roku</a></li>
+				</ul>
+			</nav>
+
+		<main id="main">
+			<heading-anchors>
+				
+<!-- wp:heading {"level":6,"fontSize":"medium"} -->
+<h6 class="has-medium-font-size" id="jump-to">Jump To...</h6>
+<!-- /wp:heading -->
+<custom-masonry layout="50-50">
+<a href="#holiday-animations">Holiday Animations</a>
+<a href="#holiday-photos">Holiday Photos</a>
+<a href="#animations">Animations</a>
+<a href="#photos">Photos</a>
+</custom-masonry>
+<!-- wp:heading {"level":4,"backgroundColor":"light-gray","fontSize":"medium"} -->
+<h4 class="has-light-gray-background-color has-background has-medium-font-size" id="holiday-animations">Holiday Animations</h4>
+<!-- /wp:heading -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="dZGiSt-5YvM" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="dZGiSt-5YvM" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/265892/cozy-christmas" data-type="URL" data-id="https://channelstore.roku.com/details/265892/cozy-christmas" target="_blank" rel="noreferrer noopener">Add Christmas Village to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="1SuAeGmL0rY" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="1SuAeGmL0rY" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588676/happy-birthday-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588676/happy-birthday-screensaver" target="_blank" rel="noreferrer noopener">Add Happy Birthday to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="wnHC4AVjsyE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="wnHC4AVjsyE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/275432/happy-mothers-day" data-type="URL" data-id="https://channelstore.roku.com/details/275432/happy-mothers-day" target="_blank" rel="noreferrer noopener">Add Happy Mother's Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="HNA3-5otVmg" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="HNA3-5otVmg" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/275428/st-patricks-day" data-type="URL" data-id="https://channelstore.roku.com/details/275428/st-patricks-day" target="_blank" rel="noreferrer noopener">Add St Patrick's Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="NR0nKwTeDzk" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="NR0nKwTeDzk" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589776/thanksgiving-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589776/thanksgiving-screensaver" target="_blank" rel="noreferrer noopener">Add Thanksgiving to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="L5mSiXRSoa0" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="L5mSiXRSoa0" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/271392/valentines-day" data-type="URL" data-id="https://channelstore.roku.com/details/271392/valentines-day" target="_blank" rel="noreferrer noopener">Add Valentine's Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="iQGUMLFgCl0" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="iQGUMLFgCl0" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589910/halloween-castle-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589910/halloween-castle-screensaver" target="_blank" rel="noreferrer noopener">Add Halloween Castle to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="SSv1VNbhut8" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="SSv1VNbhut8" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589580/new-years-2021-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589580/new-years-2021-screensaver" target="_blank" rel="noreferrer noopener">Add New Years 2021 to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="LhMF0SFBpNE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="LhMF0SFBpNE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589678/halloween-party-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589678/halloween-party-screensaver" target="_blank" rel="noreferrer noopener">Add Halloween Party to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="So80opWFq0M" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="So80opWFq0M" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590551/christmas-party-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590551/christmas-party-screensaver" target="_blank" rel="noreferrer noopener">Add Christmas Party to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="cUUBaZhxc6o" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="cUUBaZhxc6o" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/271382/chinese-new-year-2019" data-type="URL" data-id="https://channelstore.roku.com/details/271382/chinese-new-year-2019" target="_blank" rel="noreferrer noopener">Add Chinese New Year 2019 to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="PGMS9Kxps-g" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="PGMS9Kxps-g" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590020/easter-animated-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590020/easter-animated-screensaver" target="_blank" rel="noreferrer noopener">Add Easter to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="g940WlUm5Do" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="g940WlUm5Do" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590528/new-year-snow-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590528/new-year-snow-screensaver" target="_blank" rel="noreferrer noopener">Add New Year Snow to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="xP1j_cqhW5M" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="xP1j_cqhW5M" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588264/4th-of-july-party-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588264/4th-of-july-party-screensaver" target="_blank" rel="noreferrer noopener">Add 4th of July Party to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="4_iMi4IfTy8" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="4_iMi4IfTy8" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588143/happy-fathers-day-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588143/happy-fathers-day-screensaver" target="_blank" rel="noreferrer noopener">Add Happy Father's Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="1MBo8SqdHl0" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="1MBo8SqdHl0" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590661/mardi-gras-animated" data-type="URL" data-id="https://channelstore.roku.com/details/590661/mardi-gras-animated" target="_blank" rel="noreferrer noopener">Add Mardi Gras to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="Y5gbCT-70zE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="Y5gbCT-70zE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/587947/memorial-day-animated" data-type="URL" data-id="https://channelstore.roku.com/details/587947/memorial-day-animated" target="_blank" rel="noreferrer noopener">Add Memorial Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="MN2o3qcfLMM" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="MN2o3qcfLMM" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590712/veterans-day-animated" data-type="URL" data-id="https://channelstore.roku.com/details/590712/veterans-day-animated" target="_blank" rel="noreferrer noopener">Add Veterans Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="GGk0lx-aHcE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="GGk0lx-aHcE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590492/best-mom-animated-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590492/best-mom-animated-screensaver" target="_blank" rel="noreferrer noopener">Add Best Mom to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="cAMqscuxgmY" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="cAMqscuxgmY" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588004/memorial-day-screensaver-red" data-type="URL" data-id="https://channelstore.roku.com/details/588004/memorial-day-screensaver-red" target="_blank" rel="noreferrer noopener">Add Memorial Day  - Red to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:heading {"level":4,"backgroundColor":"light-gray","fontSize":"medium"} -->
+<h4 class="has-light-gray-background-color has-background has-medium-font-size" id="animations">Animations</h4>
+<!-- /wp:heading -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="mkvuXiHfFXM" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="mkvuXiHfFXM" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/271353/happy-winter" data-type="URL" data-id="https://channelstore.roku.com/details/271353/happy-winter" target="_blank" rel="noreferrer noopener">Add Winter Snow to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="54W4c09nZ4c" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="54W4c09nZ4c" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589589/birthday-party-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589589/birthday-party-screensaver" target="_blank" rel="noreferrer noopener">Add Birthday Party to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="OTEAzaF-Rv0" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="OTEAzaF-Rv0" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590851/shark-aquarium-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590851/shark-aquarium-screensaver" target="_blank" rel="noreferrer noopener">Add Shark Aquarium to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="d9RCFQeMUuU" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="d9RCFQeMUuU" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589880/autumn-animated-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589880/autumn-animated-screensaver" target="_blank" rel="noreferrer noopener">Add Autumn to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="13QukLQYf8s" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="13QukLQYf8s" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589767/spring-animated-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589767/spring-animated-screensaver" target="_blank" rel="noreferrer noopener">Add Spring to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="LnFYBjRCPUo" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="LnFYBjRCPUo" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/584867/aquarium" data-type="URL" data-id="https://channelstore.roku.com/details/584867/aquarium" target="_blank" rel="noreferrer noopener">Add Aquarium to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="ZvZJFApzRbo" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="ZvZJFApzRbo" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589131/animated-mountains-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589131/animated-mountains-screensaver" target="_blank" rel="noreferrer noopener">Add Mountains to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="2YI7iA4bCUA" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="2YI7iA4bCUA" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589167/space-animated-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589167/space-animated-screensaver" target="_blank" rel="noreferrer noopener">Add Space to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="D1l22qz6BXA" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="D1l22qz6BXA" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589536/animated-beach-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589536/animated-beach-screensaver" target="_blank" rel="noreferrer noopener">Add Beach to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="c_5bc0aSaoU" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="c_5bc0aSaoU" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589164/animated-jungle-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589164/animated-jungle-screensaver" target="_blank" rel="noreferrer noopener">Add Jungle to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="ccDlqTDvQkQ" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="ccDlqTDvQkQ" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589083/animated-cars-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589083/animated-cars-screensaver" target="_blank" rel="noreferrer noopener">Add Cars to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="fdRJRxsmQak" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="fdRJRxsmQak" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590044/spring-blossom-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590044/spring-blossom-screensaver" target="_blank" rel="noreferrer noopener">Add Spring Blossom to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="5-rtB3dZgcU" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="5-rtB3dZgcU" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590931/abstract-rain-animated" data-type="URL" data-id="https://channelstore.roku.com/details/590931/abstract-rain-animated" target="_blank" rel="noreferrer noopener">Add Abstract Rain to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="IxfyDQOdagE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="IxfyDQOdagE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590416/animated-clouds-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590416/animated-clouds-screensaver" target="_blank" rel="noreferrer noopener">Add Clouds to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="D3uC90GdPmI" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="D3uC90GdPmI" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589538/animated-rocket-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589538/animated-rocket-screensaver" target="_blank" rel="noreferrer noopener">Add Rocket to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="2vBF2SCHuY4" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="2vBF2SCHuY4" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588482/pool-party-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588482/pool-party-screensaver" target="_blank" rel="noreferrer noopener">Add Pool Party to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="zkXH9zzy0l4" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="zkXH9zzy0l4" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588535/beach-party-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588535/beach-party-screensaver" target="_blank" rel="noreferrer noopener">Add Beach Party to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="UGAspdR8QJU" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="UGAspdR8QJU" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589010/desert-expedition-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589010/desert-expedition-screensaver" target="_blank" rel="noreferrer noopener">Add Desert Expedition to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="bTxZSPxx8tw" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="bTxZSPxx8tw" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590909/animated-pixel-rain" data-type="URL" data-id="https://channelstore.roku.com/details/590909/animated-pixel-rain" target="_blank" rel="noreferrer noopener">Add Pixel Rain to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:heading {"level":4,"backgroundColor":"light-gray","fontSize":"medium"} -->
+<h4 class="has-light-gray-background-color has-background has-medium-font-size" id="holiday-photos">Holiday Photos</h4>
+<!-- /wp:heading -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="auG-DiiijfA" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="auG-DiiijfA" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589928/halloween-lantern-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589928/halloween-lantern-screensaver" target="_blank" rel="noreferrer noopener">Add Halloween Lantern to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="hot7QaoEPNU" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="hot7QaoEPNU" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589987/thanksgiving-pics-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589987/thanksgiving-pics-screensaver" target="_blank" rel="noreferrer noopener">Add Thanksgiving Pics to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="7jeezmTbjzQ" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="7jeezmTbjzQ" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590921/halloween-pet-pics-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590921/halloween-pet-pics-screensaver" target="_blank" rel="noreferrer noopener">Add Halloween Pet Pics to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="kx6KC8fcH-I" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="kx6KC8fcH-I" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590417/christmas-trees-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590417/christmas-trees-screensaver" target="_blank" rel="noreferrer noopener">Add Christmas Trees to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="pAoNF3a1TkQ" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="pAoNF3a1TkQ" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590647/christmas-light-photos" data-type="URL" data-id="https://channelstore.roku.com/details/590647/christmas-light-photos" target="_blank" rel="noreferrer noopener">Add Christmas Light Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="QBDUL9jpuTM" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="QBDUL9jpuTM" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590691/christmas-pet-pics-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590691/christmas-pet-pics-screensaver" target="_blank" rel="noreferrer noopener">Add Christmas Pet Pics to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="bhL3Da4RcBQ" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="bhL3Da4RcBQ" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590777/patriotic-dog-pics-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590777/patriotic-dog-pics-screensaver" target="_blank" rel="noreferrer noopener">Add Patriotic Dog Pics to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="D0Ex3PJ_BsE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="D0Ex3PJ_BsE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588246/independence-day-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588246/independence-day-screensaver" target="_blank" rel="noreferrer noopener">Add Independence Day to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="s-MAvcqXzoc" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="s-MAvcqXzoc" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590488/new-year-party-photos" data-type="URL" data-id="https://channelstore.roku.com/details/590488/new-year-party-photos" target="_blank" rel="noreferrer noopener">Add New Year Party Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="isd6iXiBnUg" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="isd6iXiBnUg" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589644/fathers-day-photo-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589644/fathers-day-photo-screensaver" target="_blank" rel="noreferrer noopener">Add Father's Day Photo to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:heading {"level":4,"backgroundColor":"light-gray","fontSize":"medium"} -->
+<h4 class="has-light-gray-background-color has-background has-medium-font-size" id="photos">Photos</h4>
+<!-- /wp:heading -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="2gpyoYMYRE0" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="2gpyoYMYRE0" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590503/winter-snow-photo-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590503/winter-snow-photo-screensaver" target="_blank" rel="noreferrer noopener">Add Winter Snow Photo to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="kRTmEoHF4cU" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="kRTmEoHF4cU" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589703/cat-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589703/cat-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Cat Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="naNZxPWl-qE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="naNZxPWl-qE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589606/dog-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589606/dog-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Dog Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="UQNQyyX3w3U" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="UQNQyyX3w3U" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/590924/seattle-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/590924/seattle-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Seattle Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="tg9nCQKHI_E" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="tg9nCQKHI_E" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589283/space-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589283/space-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Space Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="Rw48DxCb9Uc" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="Rw48DxCb9Uc" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588590/beach-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588590/beach-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Beach Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="Te12Uwpz5ZM" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="Te12Uwpz5ZM" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589963/coral-reef-photo-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589963/coral-reef-photo-screensaver" target="_blank" rel="noreferrer noopener">Add Coral Reef Photo to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="waz6JcbIWvA" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="waz6JcbIWvA" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589294/ocean-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589294/ocean-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Ocean Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="eXyToDzGNoE" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="eXyToDzGNoE" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589913/cats-and-dogs-photo-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589913/cats-and-dogs-photo-screensaver" target="_blank" rel="noreferrer noopener">Add Cats &amp; Dogs Photo to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="2_21OPA6RGs" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="2_21OPA6RGs" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589155/flowers-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589155/flowers-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Spring Flowers to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="BLYmDYA6DFM" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="BLYmDYA6DFM" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589499/shark-photo-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589499/shark-photo-screensaver" target="_blank" rel="noreferrer noopener">Add Shark Photo to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="kO9boqyqL4g" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="kO9boqyqL4g" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589652/autumn-photo-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589652/autumn-photo-screensaver" target="_blank" rel="noreferrer noopener">Add Autumn Photo to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="zAbPOLYuNco" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="zAbPOLYuNco" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589573/horse-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589573/horse-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Horse Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="cTrTnPtRJcY" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="cTrTnPtRJcY" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588187/puppy-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588187/puppy-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Puppy Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="dwHhDiPQ-G0" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="dwHhDiPQ-G0" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588720/forest-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588720/forest-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Forest Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="bKqGAfUzCZc" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="bKqGAfUzCZc" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589186/lake-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589186/lake-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Lake Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="aEfOrEHpeqg" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="aEfOrEHpeqg" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/588766/alaska-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/588766/alaska-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Alaska Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="ZeY-jFbB30I" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="ZeY-jFbB30I" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589074/kitten-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589074/kitten-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Kitten Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="i2SQwhBwICI" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="i2SQwhBwICI" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589629/bird-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589629/bird-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Bird Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:embed {"url":"<div><custom-youtube @slug="gK933CZ0e_E" @label="Roku Screensaver"> </custom-youtube></div>","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div><custom-youtube @slug="gK933CZ0e_E" @label="Roku Screensaver"> </custom-youtube></div>
+</div></figure>
+<!-- /wp:embed -->
+<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size"><a href="https://channelstore.roku.com/details/589064/canyon-photos-screensaver" data-type="URL" data-id="https://channelstore.roku.com/details/589064/canyon-photos-screensaver" target="_blank" rel="noreferrer noopener">Add Canyon Photos to your Roku!</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator is-style-wide">
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+			</p>
+		</footer>
+
+		<!-- This page `/roku/` was built on 2026-01-07T01:33:12.190Z -->
+		<script type="module" src="/reanimatedwebtest/dist/cC8wS6ZjFU.js"></script>
+	</body>
+</html>

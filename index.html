@@ -22,9 +22,12 @@
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #333;
 
+	--color-black: #000000;
+	--color-white: #fff;
+
 	--background-color: #fff;
 
-	--text-color: var(--color-gray-90);
+	--text-color: var(--color-black);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
 	--text-color-link-visited: #17050F;
@@ -39,12 +42,12 @@
 		--color-gray-90: #dad8d8;
 
 		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
+		--text-color-link: var(--color-black);
 		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
+		--text-color-link-visited: var(--color-black);
 
 		--background-color: #fe8210;
-		--foreground-color: #15202b;
+		--foreground-color: #ffffff;
 	}
 }
 
@@ -60,17 +63,15 @@
 
 html,
 body {
-	padding: 30px;
-	margin: 0 auto;
+	
+	margin: 2em auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
+	max-width: 1000px;
 }
 html {
 	overflow-y: scroll;
-}
-body {
-	max-width: 40em;
 }
 
 .fugaz-one-regular {
@@ -136,9 +137,14 @@ a[href]:active {
 
 main,
 footer {
-	padding: 1rem;
 	background-color: var(--foreground-color);
 }
+
+footer{
+	clear: both;
+}
+
+
 main :first-child {
 	margin-top: 0;
 }
@@ -232,24 +238,81 @@ header {
 	text-decoration: none;
 }
 
+.entry-title{
+	font-size: 26px;
+}
+
+#main_content{
+
+	clear:both;
+}
+
+#primary{	
+	float:left;
+	width:100%;
+	margin: 0 -26.4% 0 0;
+	background-color: var(--color-white);
+}
+
+#secondary{
+	float:right;
+	width: 18.8%;
+	margin-right: 7.6%;
+	font-size: 12px;
+}
+
+#content{
+	margin: 0 34% 0 7.6%;
+  	width: 58.4%;
+}
+
+
+nav{
+	
+	line-height: 1.625;
+	width: 100%;
+	background-color: var(--color-black);
+	clear: both;
+	display: block;
+	float: left;
+	margin: 0  auto 6px;
+}
+
 /* Nav */
 .nav {
-	display: flex;
 	gap: .5em 1em;
 	padding: 0;
-	margin: 0;
 	list-style: none;
-	background-color: var(--foreground-color);
+	margin: 0 7.6%;
+	color: var(--foreground-color);
+	background-color: var(--color-black);
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
 }
 .nav-item {
-	display: inline-block;
 	font-family: "Fugaz One";
+	font-size: 150%;
+	line-height: 1.625;
+	float: left;
+	position: relative;
+	box-sizing: content-box;
+}
+
+.nav-item:hover{
+	
+	background-color: var(--color-white);
+	
+	color: var(--color-black);
+
 }
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
+	color: var(--color-white);
 }
-.nav a[href][aria-current="page"] {
-	text-decoration: underline;
+
+.nav-item a{
+	line-height:3.333em;
+	display: block;
+	padding: 0 1.2125em;
 }
 
 /* Posts list */
@@ -319,24 +382,6 @@ header {
 }
 .post-metadata time {
 	margin-right: 1em;
-}
-/* Message Box */
-.message-box {
-	--color-message-box: #ffc;
-
-	display: block;
-	background-color: var(--color-message-box);
-	color: var(--color-gray-90);
-	padding: 1em 0.625em; /* 16px 10px /16 */
-}
-.message-box ol {
-	margin-top: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-	.message-box {
-		--color-message-box: #082840;
-	}
 }</style>
 		
 
@@ -356,56 +401,79 @@ header {
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
 				<ul class="nav">
 					<li class="nav-item"><a href="/reanimatedwebtest/" aria-current="page">Home</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/blog/">Archive</a></li>
-					<li class="nav-item"><a href="/reanimatedwebtest/about/">About</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/contact/">Contact</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/indevelopment/">In Development</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/privacy/">Privacy</a></li>
 					<li class="nav-item"><a href="/reanimatedwebtest/feed/feed.xml">Feed</a></li>
+					<li class="nav-item"><a href="/reanimatedwebtest/roku/">Roku</a></li>
 				</ul>
 			</nav>
 
 		<main id="main">
 			<heading-anchors>
-				<!-- Delete this block, which will also remove the component CSS from the bundle -->
+				
 
-<div class="message-box">
-	<ol>
-		<li>Edit <code>_data/metadata.js</code> with your blog’s information.</li>
-		<li>(Optional) Edit <code>eleventy.config.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-		<li>Delete this message from <code>_includes/layouts/home.njk</code>.</li>
-	</ol>
-	<p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+<div id="main_content">
+
+<div id="primary">
+	<div id="content">
+		
+		<div>
+			<h1 class="entry-title" id="deadburg-is-now-available-on-steam"><a class="home-link" href="/reanimatedwebtest/blog/deadburg-is-now-available-on-steam/">Deadburg is now available on Steam!</a></h1>
+			
+			<p>The wait is over! Deadburg is now available to play on PC via Steam.</p>
+<iframe loading="lazy" src="https://store.steampowered.com/widget/671640/" width="646" height="190" frameborder="0"></iframe>
+		</div>
+		
+		<div>
+			<h1 class="entry-title" id="local-co-op-on-the-same-console-is-not-supported"><a class="home-link" href="/reanimatedwebtest/blog/local-co-op-on-the-same-console-is-not-supported/">Local co-op on the same console is NOT supported!</a></h1>
+			
+			<p>Due to a mistake made when posting the build to the Xbox Live Indie Game marketplace Deadburg currently shows support for offline co-op. This is NOT a supported feature.</p>
+<p>We will be updating the game as soon as possible to fix this error in the description. That will probably go live around 1/6, based on how long it took to get initial approval.</p>
+
+		</div>
+		
+		<div>
+			<h1 class="entry-title" id="deadburg-is-available"><a class="home-link" href="/reanimatedwebtest/blog/deadburg-is-available/">Deadburg is available!</a></h1>
+			
+			<p>Deadburg, the first release from Reanimated Games is now live on the Xbox LIVE Indie Game store!</p>
+<p>Check it out <a href="http://marketplace.xbox.com/en-US/Product/Deadburg/66acd000-77fe-1000-9115-d80258550eb4">here</a>, or find it in the Indie Game channel on your Xbox 360.</p>
+
+		</div>
+		
+	</div>
+
 </div>
-<!-- Stop deleting -->
 
+<div id="secondary">
+	
+	
+	<h3 id="latest-3-posts">Latest 3 Posts</h3>
 
-
-<h1 id="latest-3-posts">Latest 3 Posts</h1>
-
-
-
-<ol reversed="" class="postlist" style="--postlist-index: 10">
-	<li class="postlist-item">
-		<a href="/reanimatedwebtest/blog/fifthpost/" class="postlist-link">This is a fifth post (draft)</a>
-		<time class="postlist-date" datetime="2023-01-23">January 2023</time>
-	</li>
+	
+	
+	<ol reversed="" class="postlist" style="--postlist-index: 5">
 	<li class="postlist-item">
 		<a href="/reanimatedwebtest/blog/deadburg-is-now-available-on-steam/" class="postlist-link">Deadburg is now available on Steam!</a>
-		<time class="postlist-date" datetime="2022-03-16">March 2022</time>
 	</li>
 	<li class="postlist-item">
-		<a href="/reanimatedwebtest/blog/fourthpost/" class="postlist-link">This is my fourth post</a>
-		<time class="postlist-date" datetime="2018-09-30">September 2018</time>
+		<a href="/reanimatedwebtest/blog/local-co-op-on-the-same-console-is-not-supported/" class="postlist-link">Local co-op on the same console is NOT supported!</a>
+	</li>
+	<li class="postlist-item">
+		<a href="/reanimatedwebtest/blog/deadburg-is-available/" class="postlist-link">Deadburg is available!</a>
 	</li>
 </ol>
 
 
+	
+	
+	<p>1 more post can be found in <a href="/reanimatedwebtest/blog/">the archive</a>.</p>
+	
 
-
-<p>6 more posts can be found in <a href="/reanimatedwebtest/blog/">the archive</a>.</p>
-
-
-
-
-
+	
+	
+	</div>
+</div>
 
 			</heading-anchors>
 		</main>
@@ -416,7 +484,7 @@ header {
 			</p>
 		</footer>
 
-		<!-- This page `/` was built on 2026-01-06T22:52:51.720Z -->
+		<!-- This page `/` was built on 2026-01-07T01:33:12.190Z -->
 		<script type="module" src="/reanimatedwebtest/dist/cC8wS6ZjFU.js"></script>
 	</body>
 </html>
