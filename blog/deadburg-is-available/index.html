@@ -258,25 +258,31 @@ header {
 
 	clear:both;
 	padding: 1.625em 0;
+
+	display: grid;
+  	grid-template-columns: 1fr; /* Single column by default (mobile) */
+  	gap: 20px; /* Space between columns */
+	justify-content: start;
 }
 
-#primary{	
-	float:left;
-	width:100%;
-	margin: 0 -26.4% 0 0;
+/* Switches to two columns on screens wider than 768px */
+@media (min-width: 768px) {
+  #main_content {
+    grid-template-columns: 1fr 0.4fr; /* Two equal columns */
+  }
+}
+
+#primary{
 	background-color: var(--color-white);
 }
 
 #secondary{
-	float:right;
-	width: 18.8%;
-	margin-right: 7.6%;
 	font-size: 12px;
+	display: none;
 }
 
 #content{
-	margin: 0 34% 0 7.6%;
-  	width: 58.4%;
+  	margin: 2em;
 }
 
 #built-with{
@@ -423,6 +429,57 @@ nav{
 	padding: 0 0 1.625em;
 
 	border-bottom: 1px solid #ddd;
+}
+
+/* Mobile: Hidden menu, visible hamburger */
+.menu-toggle { display: block; }
+.nav { display: none; flex-direction: column; }
+
+/* ADD THIS NEW RULE */
+.nav.active {
+  display: flex; /* Shown only when JavaScript toggles the 'active' class */
+}
+
+/* Container for the bars */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Space between bars */
+  padding: 10px;
+}
+
+
+/* Desktop: Visible horizontal menu, hidden hamburger */
+@media (min-width: 768px) {
+  .menu-toggle { display: none; }
+  .nav { display: flex; flex-direction: row; }
+  #secondary{display:block;}
+}
+
+
+/* The individual bars */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333; /* Icon color */
+  border-radius: 2px;
+  transition: all 0.15s ease-in-out; /* Smooth animation */
+}
+
+/* ANIMATION: Turn into an 'X' when active */
+.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.active .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 /**
  * okaidia theme for JavaScript, CSS and HTML
@@ -609,11 +666,20 @@ pre[class*="language-diff-"] {
 			</header>
 				<nav>
 					<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
-					<ul class="nav">
+
+					
+					<!-- Hamburger button for mobile only -->
+					<button class="menu-toggle" id="mobile-menu-btn" aria-label="Open Menu">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</button>
+
+					<ul class="nav" id="nav-list">
 						<li class="nav-item"><a href="/">Home</a></li>
 						<li class="nav-item"><a href="/contact/">Contact</a></li>
-						<li class="nav-item"><a href="/indevelopment/">In Development</a></li>
 						<li class="nav-item"><a href="/privacy/">Privacy</a></li>
+						<li class="nav-item"><a href="/indevelopment/">In Development</a></li>
 						<li class="nav-item"><a href="/roku/">Roku Screensavers</a></li>
 					</ul>
 				</nav>
@@ -647,7 +713,9 @@ pre[class*="language-diff-"] {
 			</footer>
 		</div>
 
-		<!-- This page `/blog/deadburg-is-available/` was built on 2026-01-07T05:53:32.019Z -->
-		<script type="module" src="/dist/cC8wS6ZjFU.js"></script>
+		<!-- This page `/blog/deadburg-is-available/` was built on 2026-01-09T22:53:41.037Z -->
+		<script type="module" src="/dist/V11MkKTbO3.js"></script>
+
+		
 	</body>
 </html>

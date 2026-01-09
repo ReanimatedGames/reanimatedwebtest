@@ -229,3 +229,11 @@ class HeadingAnchors extends HTMLElement {
 HeadingAnchors.register();
 
 export { HeadingAnchors }
+const menuBtn = document.getElementById('mobile-menu-btn');
+			const navList = document.getElementById('nav-list');
+
+			menuBtn.addEventListener('click', () => {
+				
+  				menuBtn.classList.toggle('active');
+				navList.classList.toggle('active');
+			});
